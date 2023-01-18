@@ -23,7 +23,7 @@ const sendButton = document.getElementById('sendButton');
 sendButton.onclick = sendData;
 
 const dataChannelSend = document.querySelector('textarea#dataChannelSend');
-const dataChannelReceive = document.querySelector('textarea#dataChannelReceive');
+const dataChannelChat = document.querySelector('textarea#dataChannelChat');
 
 
 let sendChannel;
@@ -100,6 +100,7 @@ async function hangup() {
   console.log('Closed peer connections');
   dataChannelSend.value = '';
   dataChannelReceive.value = '';
+  dataChannelChat.value = '';
   dataChannelSend.disabled = true;
 
   startButton.disabled = false;
@@ -180,11 +181,13 @@ async function handleCandidate(candidate) {
 function sendData() {
   const data = dataChannelSend.value;
   if (sendChannel) {
-    sendChannel.send(data);
+    sendChannel.send(data + "\n");
   } else {
-    receiveChannel.send(data);
+    receiveChannel.send(data + "\n");
   }
   console.log('Sent Data: ' + data);
+  dataChannelChat.value = dataChannelChat.value + "Tu: " + data + "\n";
+  dataChannelSend.value = '';
 }
 
 function receiveChannelCallback(event) {
@@ -197,12 +200,13 @@ function receiveChannelCallback(event) {
 
 function onReceiveChannelMessageCallback(event) {
   console.log('Received Message');
-  dataChannelReceive.value = event.data;
+  dataChannelChat.value = dataChannelChat.value + "Recibido: " + event.data;
 }
 
 function onSendChannelMessageCallback(event) {
   console.log('Received Message');
-  dataChannelReceive.value = event.data;
+  dataChannelChat.value = dataChannelChat.value + "Recibido: " + event.data;
+
 }
 
 function onSendChannelStateChange() {
