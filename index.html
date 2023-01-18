@@ -20,7 +20,7 @@
 
     <base target="_blank">
 
-    <title>APLICACION CHACHONA V1</title>
+    <title>Laboratorio 3 TARCE</title>
 
     <link rel="icon" sizes="192x192" href="../../../images/webrtc-icon-192x192.png">
     <link href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" type="text/css">
@@ -33,54 +33,36 @@
 
 <div id="container">
 
-    <h1><a href="//webrtc.github.io/samples/" title="WebRTC samples homepage">Discordia v1</a>
-        <span>Laboratorio 3 TARCE</span></h1>
+    <h1><a href="//webrtc.github.io/samples/" title="WebRTC samples homepage">Laboratorio 3 TARCE</a>
+        <span>Daniel Baute & Alexis Díaz</span></h1>
 		
-		
-	<p>This sample shows how to setup a connection between two peers in different tabs using
-        <a href="https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection">RTCPeerConnection</a>
-        and <a href="https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API">Broadcast Channel</a>
-    </p>	
+    <p>Para ejecutar este programa es necesario abrirlo en 2 pestañas y hacer click en el botón Conectar.</p>
 	
 	<video id="localVideo" playsinline autoplay muted></video>
     <video id="remoteVideo" playsinline autoplay></video>
 	
 	<div class="box">
-        <button id="startButton">Start</button>
-        <button id="hangupButton">Hang Up</button>
-    </div>
-	
-	<p>This sample shows how to setup a datachannel connection between two peers in different tabs using
-        <a href="https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection">RTCPeerConnection</a>
-        and <a href="https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API">Broadcast Channel</a>
-    </p>
-    <p>Open the sample in two tabs (of the same browser), then click start in the first tab and
-    send messages back and forth.</p>
-
-    <div id="buttons">
-        
-        <button id="sendButton" disabled>Send</button>
-        
+        <button id="startButton">Conectar</button>
+        <button id="hangupButton">Colgar</button>
     </div>
 
     <div id="sendReceive">
-        <div id="send">
-            <h2>Send</h2>
-            <textarea id="dataChannelSend" disabled
-                      placeholder="Press Start, enter some text, then press Send."></textarea>
-        </div>
         <div id="chat">
             <h2>Chat</h2>
             <textarea id="dataChannelChat" disabled></textarea>
         </div>
+        
+        <div id="send">
+            <textarea id="dataChannelSend" disabled
+            placeholder="Escribe tu mensaje aquí y haz click en Enviar..."></textarea>   
+        </div>
+
+        <div id="buttons">
+            <button id="sendButton" disabled>Enviar</button>
+        </div>
+          
     </div>
-
-    <p>For more information about RTCDataChannel, see <a
-            href="http://www.html5rocks.com/en/tutorials/webrtc/basics/#toc-rtcdatachannel"
-            title="RTCDataChannel section of HTML5 Rocks article about WebRTC">Getting Started With WebRTC</a>.</p>
-
-    <a href="https://github.com/webrtc/samples/tree/gh-pages/src/content/datachannel/channel"
-       title="View source for this page on GitHub" id="viewSource">View source on GitHub</a>
+    
 </div>
 
 <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>

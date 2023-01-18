@@ -5,16 +5,31 @@
  *  that can be found in the LICENSE file in the root of the source
  *  tree.
  */
-button {
-  margin: 0 20px 0 0;
-  width: 83px;
+
+
+ Body {
+  Background: #434a4a;
+  color:aliceblue;
 }
-div#buttons {
-  margin: 0 0 1em 0;
+p {color:aliceblue;}
+h2 {color:aliceblue;}
+textarea{color:aliceblue;}
+
+button {
+	margin: 0;
+	border: 0;
+	padding: 0;
+
+  width: 83px;
+  height: 2.0em;
+
+	font-size: 100%;
+	line-height: 1.15;
+	font-family: inherit;
 }
 
 video {
-  --width: 45%;
+  --width: 48%;
   width: var(--width);
   height: calc(var(--width) * 0.75);
   margin: 0 0 20px 0;
@@ -26,10 +41,10 @@ video#localVideo {
 }
 
 div.box {
-  margin: 1em;
+  margin: 0;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 600px) {
   button {
     width: 83px;
     margin: 0 11px 10px 0;
@@ -45,18 +60,17 @@ div.box {
   }
 }
 
-div#send {
-  margin: 0 20px 1em 0;
-}
 div#sendReceive {
   border-bottom: 1px solid #eee;
   margin: 0;
-  padding: 0 0 10px 0;
+  padding: 0 0 20px 0;
 }
+
 div#sendReceive > div {
   display: inline-block;
-  width: calc(50% - 20px);
+  width: calc(100% - 20px);
 }
+
 form {
   margin: 0 0 1em 0;
   white-space: nowrap;
@@ -66,11 +80,24 @@ form span {
   margin: 0 1em 0 0;
   white-space: normal;
 }
-textarea {
-  color: #444;
+
+textarea#dataChannelChat {
+  color: rgb(0, 0, 0);
   font-size: 0.9em;
   font-weight: 300;
-  height: 7.0em;
-  padding: 5px;
-  width: calc(100% - 10px);
+  height: 20.0em;
+  width: calc(80% - 10px);
+}
+textarea#dataChannelSend {
+  color: rgb(0, 0, 0);
+  font-size: 0.9em;
+  font-weight: 300;
+  height: 3.0em;
+  width: calc(80% - 10px);
+}
+
+button#sendButton {
+  height: 3em;
+  width: calc(9% - 1px);
+  margin-top:5px;
 }
